@@ -1,8 +1,6 @@
-// Theme Toggle
 const themeToggle = document.querySelector('.theme-toggle');
 const body = document.body;
 
-// Check for saved theme preference
 const savedTheme = localStorage.getItem('theme') || 'light';
 body.setAttribute('data-theme', savedTheme);
 
@@ -13,7 +11,6 @@ themeToggle.addEventListener('click', () => {
     localStorage.setItem('theme', newTheme);
 });
 
-// Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
@@ -22,7 +19,6 @@ menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
-// Close mobile menu when link clicked
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         menuToggle.classList.remove('active');
@@ -30,7 +26,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -44,12 +39,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Parallax Effect for Floating Objects
 const floatingObjects = document.querySelectorAll('.floating-object');
 const parallaxElements = document.querySelectorAll('.parallax-element');
 
 window.addEventListener('scroll', () => {
-    // Throttle scroll for performance
     if (window._scrolling) return;
     window._scrolling = true;
     requestAnimationFrame(() => {
@@ -67,7 +60,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Interactive Cursor Trail
 let cursorTrails = [];
 let mouseX = 0, mouseY = 0;
 
@@ -82,7 +74,6 @@ for (let i = 0; i < 5; i++) {
 }
 
 document.addEventListener('mousemove', (e) => {
-    // Throttle mousemove for performance
     if (window._moving) return;
     window._moving = true;
     requestAnimationFrame(() => {
@@ -105,7 +96,6 @@ function animateCursor() {
 }
 animateCursor();
 
-// Intersection Observer for Animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -134,7 +124,6 @@ document.querySelectorAll('.project-card, .skill-card').forEach(el => {
     observer.observe(el);
 });
 
-// Animate skill bars when in view
 const skillCards = document.querySelectorAll('.skill-card');
 const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -146,7 +135,6 @@ const skillObserver = new IntersectionObserver((entries) => {
                 progressBar.style.width = progress + '%';
             }
         } else {
-            // Reset for repeat animation
             const progressBar = entry.target.querySelector('.skill-progress');
             if (progressBar) progressBar.style.width = '0%';
         }
@@ -154,7 +142,6 @@ const skillObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 skillCards.forEach(card => skillObserver.observe(card));
 
-// Dynamic Navigation Background
 let lastScrollTop = 0;
 const nav = document.querySelector('nav');
 
@@ -170,7 +157,6 @@ window.addEventListener('scroll', () => {
         nav.style.boxShadow = 'none';
     }
 
-    // Hide/show nav on scroll
     if (scrollTop > lastScrollTop && scrollTop > 500) {
         nav.style.transform = 'translateY(-100%)';
     } else {
@@ -179,14 +165,12 @@ window.addEventListener('scroll', () => {
     lastScrollTop = scrollTop;
 });
 
-// Loading Screen
 window.addEventListener('load', () => {
     setTimeout(() => {
         document.querySelector('.loader').classList.add('hidden');
     }, 1000);
 });
 
-// 3D Tilt Effect on Project Cards
 const cards = document.querySelectorAll('.project-card');
 
 cards.forEach(card => {
@@ -209,7 +193,6 @@ cards.forEach(card => {
     });
 });
 
-// Magnetic Buttons
 const magneticButtons = document.querySelectorAll('.btn, .contact-link');
 
 magneticButtons.forEach(btn => {
@@ -226,7 +209,6 @@ magneticButtons.forEach(btn => {
     });
 });
 
-// Typing Effect for Hero Title
 const heroTitle = document.querySelector('.hero-title');
 const originalText = heroTitle.textContent;
 heroTitle.textContent = '';
@@ -241,7 +223,6 @@ function typeText() {
 }
 setTimeout(typeText, 1500);
 
-// Particle System
 function createParticle() {
     const particle = document.createElement('div');
     particle.style.position = 'fixed';
@@ -266,10 +247,8 @@ function createParticle() {
         easing: 'linear'
     }).onfinish = () => particle.remove();
 }
-// Create particles periodically
 setInterval(createParticle, 300);
 
-// Easter Egg - Konami Code
 const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 let konamiIndex = 0;
 
@@ -287,19 +266,16 @@ document.addEventListener('keydown', (e) => {
 function activateEasterEgg() {
     document.body.style.animation = 'glow 2s ease-in-out infinite alternate';
     alert('🎉 Konami Code Activated! You found the easter egg!');
-    // Create celebration particles
     for (let i = 0; i < 50; i++) {
         setTimeout(createParticle, i * 20);
     }
 }
 
-// Performance Optimization - Throttle scroll events
 let scrollTimeout;
 let isScrolling = false;
 function handleScroll() {
     if (!isScrolling) {
         window.requestAnimationFrame(() => {
-            // Scroll handling logic here
             isScrolling = false;
         });
         isScrolling = true;
@@ -307,7 +283,6 @@ function handleScroll() {
 }
 window.addEventListener('scroll', handleScroll, { passive: true });
 
-// Add ripple effect to buttons
 function createRipple(e) {
     const button = e.currentTarget;
     const ripple = document.createElement('span');
@@ -333,7 +308,6 @@ function createRipple(e) {
     setTimeout(() => ripple.remove(), 600);
 }
 
-// Add ripple to all buttons
 document.querySelectorAll('.btn').forEach(btn => {
     btn.addEventListener('click', createRipple);
 });
