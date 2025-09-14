@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sufian Zahid</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loader">
+        <div class="loader-circle"></div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+
+    <!-- Floating Objects -->
+    <div class="floating-object" style="top: 10%; left: 10%;">
+        <div class="cube">
+            <div class="cube-face"></div>
+            <div class="cube-face"></div>
+            <div class="cube-face"></div>
+            <div class="cube-face"></div>
+            <div class="cube-face"></div>
+            <div class="cube-face"></div>
+        </div>
+    </div>
+    <div class="floating-object sphere" style="top: 70%; right: 10%;"></div>
+    <div class="floating-object pyramid" style="top: 40%; left: 5%;"></div>
+    <div class="floating-object sphere" style="top: 20%; right: 20%;"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Portfolio</div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <div class="theme-toggle">
+                    <div class="theme-toggle-circle"></div>
+                </div>
+            </div>
+            <div class="menu-toggle">
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-flex">
+            <img src="use.png" alt="Profile Picture" class="hero-img">
+            <div class="hero-main">
+                <h1 class="hero-title">Muhammad Sufian Zahid</h1>
+                <p class="hero-subtitle">Building the future, one line of code at a time</p>
+                <p class="about-hero">I'm passionate about technology, creativity, and building digital experiences that
+                    make a difference. With a strong foundation in computer science and a love for problem-solving, I
+                    strive to deliver innovative solutions and beautiful user interfaces.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    <a href="https://drive.google.com/your-cv-link" class="btn btn-primary" download
+                        target="_blank">Download CV</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"></div>
+        <div class="parallax-element" data-speed="0.5" style="top: 20%; left: 10%;">
+            <div class="sphere" style="width: 30px; height: 30px;"></div>
+        </div>
+        <div class="parallax-element" data-speed="0.3" style="bottom: 30%; right: 15%;">
+            <div class="pyramid" style="border-bottom-width: 40px;"></div>
+        </div>
+    </section>
+
+    <!-- About Section (Moved up, before Projects) -->
+    <section id="about"
+        style="max-width:900px;margin:80px auto 0 auto;padding:60px 32px;background:var(--bg-glass);border-radius:24px;box-shadow:0 4px 32px var(--shadow);">
+        <div class="about-row">
+            <div class="about-text">
+                <h2 class="section-title" style="margin-bottom:32px;">About Me</h2>
+                <p style="font-size:1.2rem;color:var(--text-secondary);line-height:1.7;">
+                    I’m a Computer Science student with a strong passion for technology, problem-solving, and continuous
+                    learning. My journey in tech is fueled by curiosity and the drive to create meaningful digital
+                    experiences that combine creativity with functionality.<br><br>
+                    I enjoy exploring areas like software development, AI, and interactive design, always seeking
+                    opportunities to grow and challenge myself. Whether it’s building solutions, experimenting with
+                    new tools, or collaborating with others, I bring determination and creativity to every step.<br><br>
+                    Always open to new ideas and opportunities, I look forward to connecting and building something
+                    impactful together.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card" style="--i: 1;">
+                <div class="project-icon">✈️</div>
+                <h3 class="project-title">Airline Management System</h3>
+                <p class="project-description">A C++ console-based application for managing flights, bookings, and
+                    passengers.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">C++</span>
+                </div>
+            </div>
+            <div class="project-card" style="--i: 2;">
+                <div class="project-icon">🛠️</div>
+                <h3 class="project-title">SCIT Management System</h3>
+                <p class="project-description">A console-based C++ application integrated with MySQL for managing
+                    students, courses, and enrollments.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">MySQL</span>
+                </div>
+            </div>
+            <div class="project-card" style="--i: 3;">
+                <div class="project-icon">💻</div>
+                <h3 class="project-title">SCIT CMS</h3>
+                <p class="project-description">A C++ and Qt-based desktop application with a creative GUI for managing
+                    students, courses, and enrollments.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">Qt</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card" data-progress="90">
+                <div class="skill-icon">⚡</div>
+                <div class="skill-name">C++</div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="--progress: 90%; width: 0%"></div>
+                </div>
+            </div>
+            <div class="skill-card" data-progress="85">
+                <div class="skill-icon">🔧</div>
+                <div class="skill-name">MySQL</div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="--progress: 85%; width: 0%"></div>
+                </div>
+            </div>
+            <div class="skill-card" data-progress="75">
+                <div class="skill-icon">🎨</div>
+                <div class="skill-name">Qt</div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="--progress: 75%; width: 0%"></div>
+                </div>
+            </div>
+            <div class="skill-card" data-progress="85">
+                <div class="skill-icon">🤖</div>
+                <div class="skill-name">Python</div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="--progress: 85%; width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="hero-subtitle">Feel free to reach out for collaborations or just a friendly hello!</p>
+        <div class="contact-links">
+            <a href="mailto:sufian.zahid.312@gmail.com" class="contact-link" title="Email">
+                <img src="https://img.icons8.com/ios-filled/50/000000/new-post.png" alt="Email" />
+                <span>sufian.zahid.312@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-sufian-zahid-703324313/" class="contact-link" title="LinkedIn"
+                target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" />
+                <span>muhammad-sufian-zahid</span>
+            </a>
+            <a href="https://github.com/SufianZahid" class="contact-link" title="GitHub" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub" />
+                <span>SufianZahid</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Cursor Trail -->
+    <div class="cursor-trail"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
