@@ -144,7 +144,18 @@ body {
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
     border-bottom: 50px solid var(--secondary);
-    animation: spin 8s linear infinite;
+    opacity: 0.8;
+    animation: floatUpDown 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatUpDown {
+    from {
+        transform: translateY(50px);
+    }
+
+    to {
+        transform: translateY(-50px);
+    }
 }
 
 @keyframes float {
