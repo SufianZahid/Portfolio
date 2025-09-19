@@ -1,3 +1,4 @@
+/* ====== Variables and Base ====== */
 * {
     margin: 0;
     padding: 0;
@@ -40,6 +41,7 @@ body {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ====== Animated Background ====== */
 .animated-bg {
     position: fixed;
     width: 100%;
@@ -68,6 +70,7 @@ body {
     }
 }
 
+/* ====== Floating Objects ====== */
 .floating-object {
     position: fixed;
     pointer-events: none;
@@ -162,6 +165,7 @@ body {
     }
 }
 
+/* ====== Navigation Bar ====== */
 nav {
     position: fixed;
     top: 0;
@@ -232,6 +236,7 @@ nav {
     width: 100%;
 }
 
+/* ====== Menu Toggle ====== */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -259,6 +264,7 @@ nav {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* ====== Theme Toggle ====== */
 .theme-toggle {
     width: 50px;
     height: 26px;
@@ -287,6 +293,7 @@ nav {
     background: var(--accent);
 }
 
+/* ====== Hero Section ====== */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -385,6 +392,7 @@ nav {
     transform: translateY(-3px);
 }
 
+/* ====== Scroll Indicator ====== */
 .scroll-indicator {
     position: absolute;
     bottom: 40px;
@@ -440,6 +448,7 @@ nav {
     }
 }
 
+/* ====== Sections ====== */
 section {
     padding: 100px 40px;
     max-width: 1400px;
@@ -458,6 +467,7 @@ section {
     background-clip: text;
 }
 
+/* ====== Project Cards ====== */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -549,6 +559,7 @@ section {
     transform: scale(1.1);
 }
 
+/* ====== Skills Section ====== */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -651,6 +662,7 @@ section {
     }
 }
 
+/* ====== Contact Section ====== */
 .contact {
     text-align: center;
     padding: 100px 40px;
@@ -719,6 +731,7 @@ section {
     word-break: break-all;
 }
 
+/* ====== About Section ====== */
 #about {
     max-width: 900px;
     margin: 80px auto 0 auto;
@@ -728,12 +741,14 @@ section {
     box-shadow: 0 4px 32px var(--shadow);
 }
 
+/* ====== Parallax Elements ====== */
 .parallax-element {
     position: absolute;
     pointer-events: none;
     transition: transform 0.1s ease-out;
 }
 
+/* ====== Responsive Design ====== */
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
@@ -766,6 +781,7 @@ section {
     }
 }
 
+/* ====== Loading Animation ====== */
 .loader {
     position: fixed;
     top: 0;
@@ -794,6 +810,7 @@ section {
     animation: spin 1s linear infinite;
 }
 
+/* ====== Cursor Trail ====== */
 .cursor-trail {
     position: fixed;
     width: 20px;
@@ -806,6 +823,7 @@ section {
     z-index: 9998;
 }
 
+/* --- Responsive About Section --- */
 .about-row {
     display: flex;
     align-items: center;
@@ -873,6 +891,7 @@ section {
     }
 }
 
+/* --- Responsive Hero --- */
 .hero-flex {
     display: flex;
     align-items: center;
@@ -890,9 +909,69 @@ section {
     flex-shrink: 0;
 }
 
+/* ====== Ripple Animation ====== */
 @keyframes ripple {
     to {
         transform: scale(4);
         opacity: 0;
+    }
+}
+
+/* ====== Extra Mobile Fixes (under 600px) ====== */
+@media (max-width: 600px) {
+
+    /* Reduce hero spacing */
+    .hero {
+        padding: 60px 16px !important;
+    }
+
+    .hero-title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        letter-spacing: -1px;
+        /* prevents cutoff */
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 24px;
+        padding: 0 8px;
+    }
+
+    /* Make buttons full-width */
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 260px;
+        padding: 14px 18px;
+    }
+
+    /* Ensure contact links don't overflow */
+    .contact-link {
+        max-width: 100%;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        word-break: break-word;
+    }
+
+    /* Project cards shrink better */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* About section text/image alignment */
+    .about-row {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .about-text {
+        font-size: 0.95rem;
     }
 }
