@@ -106,7 +106,6 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
-            // Animate skill bars when in view
             if (entry.target.classList.contains('skill-card')) {
                 const progressBar = entry.target.querySelector('.skill-progress');
                 if (progressBar) {
@@ -249,7 +248,7 @@ function createParticle() {
 }
 setInterval(createParticle, 300);
 
-const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight'];
 let konamiIndex = 0;
 
 document.addEventListener('keydown', (e) => {
@@ -264,11 +263,42 @@ document.addEventListener('keydown', (e) => {
     }
 });
 function activateEasterEgg() {
-    document.body.style.animation = 'glow 2s ease-in-out infinite alternate';
-    alert('🎉 Konami Code Activated! You found the easter egg!');
+    document.body.classList.add('easter-egg-active');
+
+    const notification = document.createElement('div');
+    notification.innerHTML = '🎉 <strong>Konami Code Activated!</strong> 🎉';
+    notification.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        padding: 20px 40px;
+        border-radius: 50px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        z-index: 10000;
+        box-shadow: 0 10px 50px var(--shadow);
+        animation: popIn 0.5s ease-out;
+    `;
+    document.body.appendChild(notification);
+
     for (let i = 0; i < 50; i++) {
         setTimeout(createParticle, i * 20);
     }
+
+    document.querySelectorAll('.floating-object').forEach(obj => {
+        obj.style.animation = 'dance 1s ease-in-out infinite';
+    });
+
+    setTimeout(() => {
+        document.body.classList.remove('easter-egg-active');
+        notification.remove();
+        document.querySelectorAll('.floating-object').forEach(obj => {
+            obj.style.animation = '';
+        });
+    }, 5000);
 }
 
 let scrollTimeout;
