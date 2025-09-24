@@ -1,4 +1,3 @@
-/* ====== Variables and Base ====== */
 * {
     margin: 0;
     padding: 0;
@@ -41,7 +40,6 @@ body {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ====== Animated Background ====== */
 .animated-bg {
     position: fixed;
     width: 100%;
@@ -70,7 +68,6 @@ body {
     }
 }
 
-/* ====== Floating Objects ====== */
 .floating-object {
     position: fixed;
     pointer-events: none;
@@ -176,7 +173,6 @@ body {
     }
 }
 
-/* ====== Navigation Bar ====== */
 nav {
     position: fixed;
     top: 0;
@@ -247,7 +243,6 @@ nav {
     width: 100%;
 }
 
-/* ====== Menu Toggle ====== */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -275,7 +270,6 @@ nav {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ====== Theme Toggle ====== */
 .theme-toggle {
     width: 50px;
     height: 26px;
@@ -304,7 +298,6 @@ nav {
     background: var(--accent);
 }
 
-/* ====== Hero Section ====== */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -403,7 +396,6 @@ nav {
     transform: translateY(-3px);
 }
 
-/* ====== Scroll Indicator ====== */
 .scroll-indicator {
     position: absolute;
     bottom: 20px;
@@ -459,7 +451,6 @@ nav {
     }
 }
 
-/* ====== Sections ====== */
 section {
     padding: 100px 40px;
     max-width: 1400px;
@@ -478,7 +469,6 @@ section {
     background-clip: text;
 }
 
-/* ====== Project Cards ====== */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -570,7 +560,6 @@ section {
     transform: scale(1.1);
 }
 
-/* ====== Skills Section ====== */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -673,7 +662,6 @@ section {
     }
 }
 
-/* ====== Contact Section ====== */
 .contact {
     text-align: center;
     padding: 100px 40px;
@@ -725,7 +713,6 @@ section {
     box-sizing: border-box;
 }
 
-/* Fix for contact icons - adding colors */
 .contact-link i,
 .contact-link svg {
     width: 28px;
@@ -734,17 +721,14 @@ section {
     fill: var(--primary) !important;
 }
 
-/* Email icon */
 .contact-link:nth-child(1) i {
     color: #ea4335 !important;
 }
 
-/* LinkedIn icon */
 .contact-link:nth-child(2) i {
     color: #0077b5 !important;
 }
 
-/* GitHub icon */
 .contact-link:nth-child(3) i {
     color: #333 !important;
 }
@@ -771,7 +755,6 @@ section {
     word-break: break-all;
 }
 
-/* ====== About Section ====== */
 #about {
     max-width: 900px;
     margin: 80px auto 0 auto;
@@ -781,14 +764,12 @@ section {
     box-shadow: 0 4px 32px var(--shadow);
 }
 
-/* ====== Parallax Elements ====== */
 .parallax-element {
     position: absolute;
     pointer-events: none;
     transition: transform 0.1s ease-out;
 }
 
-/* ====== About Section Responsive ====== */
 .about-row {
     display: flex;
     align-items: center;
@@ -808,7 +789,6 @@ section {
     flex: 1;
 }
 
-/* ====== Hero Flex ====== */
 .hero-flex {
     display: flex;
     align-items: center;
@@ -826,7 +806,6 @@ section {
     flex-shrink: 0;
 }
 
-/* ====== Loading Animation ====== */
 .loader {
     position: fixed;
     top: 0;
@@ -855,7 +834,6 @@ section {
     animation: spin 1s linear infinite;
 }
 
-/* ====== Cursor Trail - HIDE ON MOBILE ====== */
 .cursor-trail {
     position: fixed;
     width: 20px;
@@ -869,7 +847,6 @@ section {
     display: block;
 }
 
-/* ====== MOBILE RESPONSIVE DESIGN ====== */
 @media (max-width: 1100px) {
     .about-row {
         gap: 32px;
@@ -883,12 +860,10 @@ section {
 
 @media (max-width: 768px) {
 
-    /* Hide cursor trail on mobile/tablet */
     .cursor-trail {
         display: none !important;
     }
 
-    /* Hide floating objects on mobile for better performance */
     .floating-object {
         display: none;
     }
@@ -923,7 +898,6 @@ section {
         grid-template-columns: 1fr;
     }
 
-    /* Center buttons on mobile */
     .hero-cta {
         flex-direction: column;
         align-items: center;
@@ -959,7 +933,6 @@ section {
         width: 100%;
     }
 
-    /* Better padding for mobile */
     section {
         padding: 60px 20px;
     }
@@ -970,18 +943,14 @@ section {
     }
 }
 
-/* ====== Enhanced Mobile Fixes (under 600px) ====== */
 @media (max-width: 600px) {
 
-    /* Hide cursor dot on touch devices */
     .cursor-trail {
         display: none !important;
     }
 
-    /* Better spacing for small screens */
     body {
         font-size: 16px;
-        /* Prevent zoom on iOS */
     }
 
     nav {
@@ -992,7 +961,6 @@ section {
         font-size: 20px;
     }
 
-    /* Hero adjustments */
     .hero {
         padding: 60px 20px;
         min-height: calc(100vh - 60px);
@@ -1022,7 +990,6 @@ section {
         margin-bottom: 20px;
     }
 
-    /* Center and style buttons properly */
     .hero-cta {
         flex-direction: column;
         width: 100%;
@@ -1040,7 +1007,6 @@ section {
         text-align: center;
     }
 
-    /* Section padding */
     section {
         padding: 50px 15px !important;
     }
@@ -1050,7 +1016,6 @@ section {
         margin-bottom: 40px;
     }
 
-    /* About section mobile */
     #about {
         padding: 40px 20px !important;
         margin: 40px 15px;
@@ -1074,7 +1039,6 @@ section {
         line-height: 1.6;
     }
 
-    /* Contact section mobile fixes */
     .contact {
         padding: 50px 20px !important;
         margin: 50px 10px !important;
@@ -1099,7 +1063,6 @@ section {
         font-size: 0.9rem;
     }
 
-    /* Project cards mobile */
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -1126,7 +1089,6 @@ section {
         line-height: 1.5;
     }
 
-    /* Skills mobile */
     .skills-container {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -1144,12 +1106,10 @@ section {
         font-size: 1.1rem;
     }
 
-    /* Hide scroll indicator on mobile */
     .scroll-indicator {
         display: none;
     }
 
-    /* Fix theme toggle size */
     .theme-toggle {
         width: 44px;
         height: 24px;
